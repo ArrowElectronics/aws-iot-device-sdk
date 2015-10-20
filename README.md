@@ -35,6 +35,7 @@ Combining the unique features of DragonBoard&trade; with Amazon Web Services cre
 * Create an [AWS account](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AMS5.0CreatingAnAWSAccount.html)
 * Go to [AWS IoT](https://aws.amazon.com/iot/) and open up the AWS IoT Dashboard
 * In the AWS IoT console, select "Create a resource"
+
 ![Image of AWS IoT Create Resource](https://raw.githubusercontent.com/ArrowElectronics/aws-iot-device-sdk/master/images/aws_iot_create_resource.png)
 
 * Choose "Create a policy" - a policy is used to determine what IoT operations the owner of the certificate can perform.
@@ -42,16 +43,20 @@ Combining the unique features of DragonBoard&trade; with Amazon Web Services cre
   * action: `iot:*`
   * resources: `*`
   * make sure that "Allow" is checked
+
 ![Image of AWS IoT Create Policy](https://raw.githubusercontent.com/ArrowElectronics/aws-iot-device-sdk/master/images/aws_iot_create_policy.png)
 
 * Choose "Create a certificate", this will present 2 options (Create with CSR or 1-Click Certificate Create), choose "1-Click Certificate Create"
+
 ![Image of AWS IoT 1-Click Certificate](https://raw.githubusercontent.com/ArrowElectronics/aws-iot-device-sdk/master/images/aws_iot_1click_certificate.png)
 
 * Click on "Certificates", Choose the previously created certificate and under "Actions", Select "Activate"
+
 ![Image of AWS IoT Activate Certificate](https://raw.githubusercontent.com/ArrowElectronics/aws-iot-device-sdk/master/images/aws_iot_activate_certificate.png)
 
 * Attach the IoT Policy to the certificate, by selecting "Attach a Policy" under "Actions"
   * Enter the name "PubSubToAnyTopic"
+
 ![Image of AWS IoT Attach Policy](https://raw.githubusercontent.com/ArrowElectronics/aws-iot-device-sdk/master/images/aws_iot_attach_policy.png)
 
 * Download the public, private keys and the certificate - these will eventually reside on the DragonBoard&trade; device
@@ -67,23 +72,26 @@ Please perform the following steps:
 Login to the Dragonboard&trade;
 
 **username** linaro
-
 **password** linaro
 
 ### Setup Internet Connection
 
 * In the bottom right of the deskop, left-click the network icon
+
 ![Image of Network Icon](https://raw.githubusercontent.com/ArrowElectronics/aws-iot-device-sdk/master/images/network_icon.png)
 
 * Choose the appropriate network, enter password as necessary
+
 ![Image of Network Menu](https://raw.githubusercontent.com/ArrowElectronics/aws-iot-device-sdk/master/images/network_menu.png)
 
 ### Install and Update SDKs
 
-* In the bottom left of the desktop, left-click the start-like icon 
+* In the bottom left of the desktop, left-click the start-like icon
+
 ![Image of Start Icon](https://raw.githubusercontent.com/ArrowElectronics/aws-iot-device-sdk/master/images/start_icon.png)
 
 * Navigate to System Tools > LXTerminal
+
 ![Image of Start Icon](https://raw.githubusercontent.com/ArrowElectronics/aws-iot-device-sdk/master/images/terminal.png)
 
 * Update the supporting libraries and SDKs
