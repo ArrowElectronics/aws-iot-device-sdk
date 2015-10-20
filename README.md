@@ -11,11 +11,11 @@ Arrow's DragonBoard&trade; 410c AWS IoT starter kit has the following contents:
 * DragonConnect - Demo App written in C
 * DragonPulse - Demo app written in NodeJS
 
-![Image of Board Callout](https://github.com/ArrowElectronics/images/dragonboard_callouts.png)
+![Image of Board Callout](https://github.com/ArrowElectronics/aws-iot-device-sdk/tree/master/images/dragonboard_callouts.png)
 
 Smaller than a standard playing card, the DragonBoard&trade; 410c packs a lot in a tiny footprint, including a quad-core 1.2Ghz Snapdragon 410 processor, 1GB RAM, 8GB SanDisk e.MMC storage, on-board WLAN, GPS, and Bluetooth.
 
-![Image of IoT Stack](https://github.com/ArrowElectronics/images/iot_infographic.png)
+![Image of IoT Stack](https://github.com/ArrowElectronics/aws-iot-device-sdk/tree/master/images/iot_infographic.png)
 
 The Starter Kit ecosystem can be setup in a matter of minutes by using a standard monitor and keyboard, connecting to the internet with the Dragonboard&trade;, provisioning your AWS account, and running the demos.
 
@@ -35,24 +35,24 @@ Combining the unique features of DragonBoard&trade; with Amazon Web Services cre
 * Create an [AWS account](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AMS5.0CreatingAnAWSAccount.html)
 * Go to [AWS IoT](https://aws.amazon.com/iot/) and open up the AWS IoT Dashboard
 * In the AWS IoT console, select "Create a resource"
-![Image of AWS IoT Create Resource](https://github.com/ArrowElectronics/images/aws_iot_create_resource.png)
+![Image of AWS IoT Create Resource](https://github.com/ArrowElectronics/aws-iot-device-sdk/tree/master/images/aws_iot_create_resource.png)
 
 * Choose "Create a policy" - a policy is used to determine what IoT operations the owner of the certificate can perform.
   * name: `PubSubToAnyTopic`
   * action: `iot:*`
   * resources: `*`
   * make sure that "Allow" is checked
-![Image of AWS IoT Create Policy](https://github.com/ArrowElectronics/images/aws_iot_create_policy.png)
+![Image of AWS IoT Create Policy](https://github.com/ArrowElectronics/aws-iot-device-sdk/tree/master/images/aws_iot_create_policy.png)
 
 * Choose "Create a certificate", this will present 2 options (Create with CSR or 1-Click Certificate Create), choose "1-Click Certificate Create"
-![Image of AWS IoT 1-Click Certificate](https://github.com/ArrowElectronics/images/aws_iot_1click_certificate.png)
+![Image of AWS IoT 1-Click Certificate](https://github.com/ArrowElectronics/aws-iot-device-sdk/tree/master/images/aws_iot_1click_certificate.png)
 
 * Click on "Certificates", Choose the previously created certificate and under "Actions", Select "Activate"
-![Image of AWS IoT Activate Certificate](https://github.com/ArrowElectronics/images/aws_iot_activate_certificate.png)
+![Image of AWS IoT Activate Certificate](https://github.com/ArrowElectronics/aws-iot-device-sdk/tree/master/images/aws_iot_activate_certificate.png)
 
 * Attach the IoT Policy to the certificate, by selecting "Attach a Policy" under "Actions"
   * Enter the name "PubSubToAnyTopic"
-![Image of AWS IoT Attach Policy](https://github.com/ArrowElectronics/images/aws_iot_attach_policy.png)
+![Image of AWS IoT Attach Policy](https://github.com/ArrowElectronics/aws-iot-device-sdk/tree/master/images/aws_iot_attach_policy.png)
 
 * Download the public, private keys and the certificate - these will eventually reside on the DragonBoard&trade; device
   * certificate.pem.crt
@@ -71,18 +71,18 @@ Login to the Dragonboard&trade;
 ### Setup Internet Connection
 
 * In the bottom right of the deskop, left-click the network icon
-![Image of Network Icon](https://github.com/ArrowElectronics/images/network_icon.png)
+![Image of Network Icon](https://github.com/ArrowElectronics/aws-iot-device-sdk/tree/master/images/network_icon.png)
 
 * Choose the appropriate network, enter password as necessary
-![Image of Network Menu](https://github.com/ArrowElectronics/images/network_menu.png)
+![Image of Network Menu](https://github.com/ArrowElectronics/aws-iot-device-sdk/tree/master/images/network_menu.png)
 
 ### Install and Update SDKs
 
 * In the bottom left of the desktop, left-click the start-like icon 
-![Image of Start Icon](https://github.com/ArrowElectronics/images/start_icon.png)
+![Image of Start Icon](https://github.com/ArrowElectronics/aws-iot-device-sdk/tree/master/images/start_icon.png)
 
 * Navigate to System Tools > LXTerminal
-![Image of Start Icon](https://github.com/ArrowElectronics/images/terminal.png)
+![Image of Start Icon](https://github.com/ArrowElectronics/aws-iot-device-sdk/tree/master/images/terminal.png)
 
 * Update the supporting libraries and SDKs
 ```sh
