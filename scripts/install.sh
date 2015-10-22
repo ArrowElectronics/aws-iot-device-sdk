@@ -8,6 +8,8 @@ IS_INSTALL="n"
 
 if [ "$1" == "-f" ];then
     IS_FORCE="y"
+else 
+    IS_FORCE="n"
 fi
 
 cd $BASE_DRAGONBOARD_DIR
