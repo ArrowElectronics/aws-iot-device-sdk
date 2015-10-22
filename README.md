@@ -1,12 +1,11 @@
-# aws-iot-thing-sdk
-# Welcome!
+# Welcome to aws-iot-thing-sdk!
 
 Thanks for trying out the DragonBoard&trade; 410c AWS IoT Starter Kit powered by Amazon AWS. This document will help you setup your DragonBoard to use Amazon AWS IoT services. :dragon_face:
 
 # Arrow DragonBoard 410c
 
 Arrow's DragonBoard&trade; 410c AWS IoT starter kit has the following contents:
-* Arrow DragonBoard&trade; 410c development board (http://partners.arrow.com/campaigns-na/qualcomm/dragonboard-410c/awsiotstarterkit/)
+* [Arrow DragonBoard&trade; 410c development board](http://partners.arrow.com/campaigns-na/qualcomm/dragonboard-410c/awsiotstarterkit/)
 * Power Supply 12v 2amp
 * DragonConnect - Demo App written in C
 * DragonPulse - Demo app written in NodeJS
@@ -60,8 +59,8 @@ Combining the unique features of DragonBoard&trade; with Amazon Web Services cre
 ![Image of AWS IoT Attach Policy](https://raw.githubusercontent.com/ArrowElectronics/aws-iot-device-sdk/master/images/aws_iot_attach_policy.png)
 
 * Download the public, private keys and the certificate - these will eventually reside on the DragonBoard&trade; device
-  * certificate.pem.crt
-  * private.pem.key
+  * certificate.pem.crt (in this case: 1ff980beb8-certificate.pem.crt, the hash is used as an identifier)
+  * private.pem.key (in this case: 1ff980beb8-private.pem.key)
 
 ## Configuring the starter kit
 
@@ -69,9 +68,10 @@ Please perform the following steps:
 * Connect the DragonBoard&trade; to the external monitor via HDMI connector
 * Connect USB Keyboard and mouse
 
-Login to the Dragonboard&trade;
+### Login to the Dragonboard&trade;
 
 **username** linaro
+
 **password** linaro
 
 ### Setup Internet Connection
@@ -96,8 +96,8 @@ Login to the Dragonboard&trade;
 
 * Update the supporting libraries and SDKs
 ```sh
-cd /home/linaro/Documents/aws-iot-device-sdk
-./update
+cd /home/linaro/Documents/aws-iot-device-sdk/scripts
+./update.sh
 ```
 
 ### DragonConnect
@@ -135,3 +135,16 @@ $ cd /home/linaro/Documents/aws-iot-thing-sdk-dragonpulse-js/DragonBoard/
 $ sudo su
 $ npm start
 ```
+
+### Install the Private key and Certificate
+
+In order to enable secure communication with AWS IoT service, you will need to put the private key and certificate on the device
+
+* Copy the private key and certificate to the DragonBoard&trade; - there are multiple ways to accomplish this
+  * Use a microSD
+  * E-mail to yourself
+  * Create the certificate using the web browser included
+
+* Put the private key and certificate into the appropriate demo folders
+  * DragonConnect `/home/linaro/Documents/aws-iot-thing-sdk-dragonconnect-c/DragonBoard/certs`
+  * DragonPulse `/home/linaro/Documents/aws-iot-thing-sdk-dragonpulse-js/DragonBoard/certs`
