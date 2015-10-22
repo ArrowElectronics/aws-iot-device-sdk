@@ -97,7 +97,13 @@ Please perform the following steps:
 * Update the supporting libraries and SDKs
 ```sh
 cd /home/linaro/Documents/aws-iot-device-sdk/scripts
+# run the update script
 ./update.sh
+
+# install nodejs, additional build libraries through apt-get
+# change to root
+$ sudo su
+$ ./install.sh
 ```
 
 ### DragonConnect
@@ -116,13 +122,6 @@ $ cd /home/linaro/Documents/aws-iot-thing-sdk-dragonconnect-c/DragonBoard/
 $ make install
 ```
 
-* Run DragonConnect as root, in order to access GPIO ports
-```sh
-$ sudo su
-$ cd /home/linaro/Documents/aws-iot-thing-sdk-dragonconnect-c/DragonBoard/bin
-$ ./aws_demo
-```
-
 ### DragonPulse
 
 Utilizes NodeJs, MQTT protocol, and Amazon AWS services, to interact with Ubuntu shell commands. Extract performance and summary statistics to remotely monitor top CPU consumption, memory usage, network traffic, and disk space.
@@ -134,10 +133,12 @@ More information and source code on [Github](https://github.com/ArrowElectronics
 $ cd /home/linaro/Documents/aws-iot-thing-sdk-dragonpulse-js/DragonBoard/
 ```
 
-* Run as DragonPulse as root, in order to access iftop
+* Install and update npm libraries
 ```sh
-$ sudo su
-$ npm start
+# install npm libraries in package.json
+$ npm install
+# update libraries that might have changed
+$ npm update
 ```
 
 ### Install the Private key and Certificate
