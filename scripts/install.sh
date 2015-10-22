@@ -14,11 +14,11 @@ fi
 
 cd $BASE_DRAGONBOARD_DIR
 
-if [ "$IS_FORCE"=="y" ];then
+if [ "$IS_FORCE" == "y" ];then
     IS_INSTALL="y"
     echo "forcing NodeJS install"
 else
-    CURRENT_NODE_VERSION = `node --version | sed 's/^.*[^0-9]\([0-9]*\.[0-9]*\.[0-9]*\).*$/\1/'`
+    CURRENT_NODE_VERSION=`node --version | sed 's/^.*[^0-9]\([0-9]*\.[0-9]*\.[0-9]*\).*$/\1/'`
     #do a version check
     if [ "$CURRENT_NODE_VERSION" == "" ] ; then
         IS_INSTALL="y"
@@ -27,7 +27,7 @@ else
     fi
 fi
 
-if [ "$IS_INSTALL"=="y" ] ; then
+if [ "$IS_INSTALL" == "y" ] ; then
    if [ ! -d "tmp" ]; then
     mkdir -p tmp
    fi
