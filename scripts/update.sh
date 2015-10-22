@@ -20,26 +20,26 @@ cd $BASE_DRAGONBOARD_DIR
 if [ -d "$DRAGONPULSE_DIR" ]; then
 	git pull
 else
-	git clone git@github.com:ArrowElectronics/aws-iot-thing-sdk-dragonpulse-js.git
+	git clone git://github.com/ArrowElectronics/aws-iot-thing-sdk-dragonpulse-js.git
 fi
 
 # install/update dragonconnect demo
 if [ -d "$DRAGONCONNECT_DIR" ]; then
 	git pull
 else
-	git clone git@github.com:ArrowElectronics/aws-iot-thing-sdk-dragonconnect-c.git
+	git clone git://github.com/ArrowElectronics/aws-iot-thing-sdk-dragonconnect-c.git
 fi
 
 # install/update aws iot sdk javascript
 if [ -d "$AWS_IOT_JS_DIR" ]; then
 	git pull
 else
-	git clone git@github.com:aws/aws-iot-device-sdk-js.git
+	git clone git://github.com/aws/aws-iot-device-sdk-js.git
 fi
 
 # install/update aws iot sdk embedded c
 if [ -d "$AWS_IOT_C_DIR" ]; then
 	git pull
 else
-	git clone git@github.com:aws/aws-iot-device-sdk-embedded-C.git
+	git clone git://github.com/aws/aws-iot-device-sdk-embedded-C.git
 fi
