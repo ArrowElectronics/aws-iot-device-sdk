@@ -103,7 +103,8 @@ cd /home/linaro/Documents/aws-iot-device-sdk/scripts
 ### DragonConnect
 
 Connects and communicates with the Dragonboard&trade;. Written in C and integrating a 2-way MQTT channel through Amazon AWS, DragonConnect reads/writes to Ubuntu file handlers allowing control of on-board IO.
-More information and source on [Github](https://github.com/ArrowElectronics/aws-iot-thing-sdk-dragonconnect-c)
+
+More information and source code on [Github](https://github.com/ArrowElectronics/aws-iot-thing-sdk-dragonconnect-c)
 
 * Navigate to DragonConnect
 ```sh
@@ -125,7 +126,8 @@ $ ./aws_demo
 ### DragonPulse
 
 Utilizes NodeJs, MQTT protocol, and Amazon AWS services, to interact with Ubuntu shell commands. Extract performance and summary statistics to remotely monitor top CPU consumption, memory usage, network traffic, and disk space.
-More information and source on [Github](https://github.com/ArrowElectronics/aws-iot-thing-sdk-dragonpulse-js)
+
+More information and source code on [Github](https://github.com/ArrowElectronics/aws-iot-thing-sdk-dragonpulse-js)
 
 * Navigate to DragonPulse
 ```sh
@@ -150,3 +152,6 @@ In order to enable secure communication with AWS IoT service, you will need to p
 * Put the private key and certificate into the appropriate demo folders
   * DragonConnect `/home/linaro/Documents/aws-iot-thing-sdk-dragonconnect-c/DragonBoard/certs`
   * DragonPulse `/home/linaro/Documents/aws-iot-thing-sdk-dragonpulse-js/DragonBoard/certs`
+  
+# License
+This SDK is distributed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0), see LICENSE.txt and NOTICE.txt for more information.
