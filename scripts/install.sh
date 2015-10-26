@@ -12,6 +12,11 @@ else
     IS_FORCE="n"
 fi
 
+#make directory if not available
+if [ ! -d "$BASE_DRAGONBOARD_DIR" ]; then
+  mkdir -p $BASE_DRAGONBOARD_DIR
+fi
+
 cd $BASE_DRAGONBOARD_DIR
 
 if [ "$IS_FORCE" == "y" ];then
