@@ -110,7 +110,7 @@ $ ./install.sh
 
 Connects and communicates with the Dragonboard&trade;. Written in C and integrating a 2-way MQTT channel through Amazon AWS, DragonConnect reads/writes to Ubuntu file handlers allowing control of on-board IO.
 
-More information and source code on [Github](https://github.com/ArrowElectronics/aws-iot-thing-sdk-dragonconnect-c)
+More information and source code on [Github](https://github.com/ArrowElectronics/aws-iot-dragonconnect-c)
 
 * Navigate to DragonConnect
 ```sh
@@ -126,7 +126,7 @@ $ make install
 
 Utilizes NodeJs, MQTT protocol, and Amazon AWS services, to interact with Ubuntu shell commands. Extract performance and summary statistics to remotely monitor top CPU consumption, memory usage, network traffic, and disk space.
 
-More information and source code on [Github](https://github.com/ArrowElectronics/aws-iot-thing-sdk-dragonpulse-js)
+More information and source code on [Github](https://github.com/ArrowElectronics/aws-iot-dragonpulse-js)
 
 * Navigate to DragonPulse
 ```sh
