@@ -151,8 +151,8 @@ In order to enable secure communication with AWS IoT service, you will need to p
   * Create the certificate using the web browser included
 
 * Put the private key and certificate into the appropriate demo folders
-  * DragonConnect `/home/linaro/Documents/aws-iot-thing-sdk-dragonconnect-c/DragonBoard/certs`
-  * DragonPulse `/home/linaro/Documents/aws-iot-thing-sdk-dragonpulse-js/DragonBoard/certs`
+  * DragonConnect `/home/linaro/Documents/aws-iot-dragonconnect-c/DragonBoard/certs`
+  * DragonPulse `/home/linaro/Documents/aws-iot-dragonpulse-js/DragonBoard/certs`
   
 # License
 This SDK is distributed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0), see LICENSE.txt and NOTICE.txt for more information.
