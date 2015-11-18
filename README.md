@@ -94,7 +94,7 @@ $ cd ~/linaro/Documents
 # clone the AWS-demo repository from the Arrow Electronics GitHub page:
 $ git clone https://github.com/ArrowElectronics/aws-iot-device-sdk.git 
 $ cd aws-iot-device-sdk/scripts
-$ sudo ./install.sh
+$ ./install.sh
 ```
 
 ### DragonConnect
