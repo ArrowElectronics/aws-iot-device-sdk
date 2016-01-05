@@ -1,24 +1,31 @@
 # Welcome to aws-iot-thing-sdk!
 
-Thanks for trying out the DragonBoard&trade; 410c AWS IoT Starter Kit powered by Amazon AWS. This document will help you setup your DragonBoard to use Amazon AWS IoT services. :dragon_face:
+Thanks for trying out the DragonBoard&trade; 410c AWS IoT Starter Kit powered
+by Amazon AWS. This document will help you setup your DragonBoard to use Amazon
+AWS IoT services. :dragon_face:
 
 # Arrow DragonBoard 410c
 
 Arrow's DragonBoard&trade; 410c AWS IoT starter kit has the following contents:
 * [Arrow DragonBoard&trade; 410c development board](http://partners.arrow.com/campaigns-na/qualcomm/dragonboard-410c/awsiotstarterkit/)
-* Power Supply 12v 2amp
+* Power Supply 12V 2A
 * DragonConnect - Demo App written in C
 * DragonPulse - Demo app written in NodeJS
 
 ![Image of Board Callout](https://raw.githubusercontent.com/ArrowElectronics/aws-iot-device-sdk/master/images/dragonboard_callouts.png)
 
-Smaller than a standard playing card, the DragonBoard&trade; 410c packs a lot in a tiny footprint, including a quad-core 1.2Ghz Snapdragon 410 processor, 1GB RAM, 8GB SanDisk e.MMC storage, on-board WLAN, GPS, and Bluetooth.
+Smaller than a standard playing card, the DragonBoard&trade; 410c packs a lot
+in a tiny footprint, including a quad-core 1.2Ghz Snapdragon 410 processor,
+1GB RAM, 8GB SanDisk e.MMC storage, on-board WLAN, GPS, and Bluetooth.
 
 ![Image of IoT Stack](https://raw.githubusercontent.com/ArrowElectronics/aws-iot-device-sdk/master/images/iot_infographic.png)
 
-The Starter Kit ecosystem can be setup in a matter of minutes by using a standard monitor and keyboard, connecting to the internet with the Dragonboard&trade;, provisioning your AWS account, and running the demos.
+The Starter Kit ecosystem can be setup in a matter of minutes by using a
+standard monitor and keyboard, connecting to the internet with the
+Dragonboard&trade;, and running the demos.
 
-Combining the unique features of DragonBoard&trade; with Amazon Web Services creates an integrated ecosystem for bringing any project online.
+Combining the unique features of DragonBoard&trade; with Amazon Web Services
+creates an integrated ecosystem for bringing any project online.
 
 # Getting Started
 
@@ -29,46 +36,13 @@ Combining the unique features of DragonBoard&trade; with Amazon Web Services cre
 * USB Mouse
 * Wi-Fi internet connection
 
-## Configuring your AWS IoT Service
-
-* Create an [AWS account](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AMS5.0CreatingAnAWSAccount.html)
-* Go to [AWS IoT](https://aws.amazon.com/iot/) and open up the AWS IoT Dashboard
-* In the AWS IoT console, select "Create a resource"
-
-![Image of AWS IoT Create Resource](https://raw.githubusercontent.com/ArrowElectronics/aws-iot-device-sdk/master/images/aws_iot_create_resource.png)
-
-* Choose "Create a policy" - a policy is used to determine what IoT operations the owner of the certificate can perform.
-  * name: `PubSubToAnyTopic`
-  * action: `iot:*`
-  * resources: `*`
-  * make sure that "Allow" is checked
-
-![Image of AWS IoT Create Policy](https://raw.githubusercontent.com/ArrowElectronics/aws-iot-device-sdk/master/images/aws_iot_create_policy.png)
-
-* Choose "Create a certificate", this will present 2 options (Create with CSR or 1-Click Certificate Create), choose "1-Click Certificate Create"
-
-![Image of AWS IoT 1-Click Certificate](https://raw.githubusercontent.com/ArrowElectronics/aws-iot-device-sdk/master/images/aws_iot_1click_certificate.png)
-
-* Click on "Certificates", Choose the previously created certificate and under "Actions", Select "Activate"
-
-![Image of AWS IoT Activate Certificate](https://raw.githubusercontent.com/ArrowElectronics/aws-iot-device-sdk/master/images/aws_iot_activate_certificate.png)
-
-* Attach the IoT Policy to the certificate, by selecting "Attach a Policy" under "Actions"
-  * Enter the name "PubSubToAnyTopic"
-
-![Image of AWS IoT Attach Policy](https://raw.githubusercontent.com/ArrowElectronics/aws-iot-device-sdk/master/images/aws_iot_attach_policy.png)
-
-* Download the public, private keys and the certificate - these will eventually reside on the DragonBoard&trade; device
-  * certificate.pem.crt (in this case: 1ff980beb8-certificate.pem.crt, the hash is used as an identifier)
-  * private.pem.key (in this case: 1ff980beb8-private.pem.key)
-
-## Configuring the starter kit
+## Configuring the Starter Kit
 
 Please perform the following steps:
 * Connect the DragonBoard&trade; to the external monitor via HDMI connector
 * Connect USB Keyboard and mouse
 
-### Login to the Dragonboard&trade;
+### Login to the DragonBoard&trade;
 
 **username** linaro
 
@@ -108,51 +82,30 @@ $ ./install.sh
 
 ### DragonConnect
 
-Connects and communicates with the Dragonboard&trade;. Written in C and integrating a 2-way MQTT channel through Amazon AWS, DragonConnect reads/writes to Ubuntu file handlers allowing control of on-board IO.
+Connects and communicates with the DragonBoard&trade;. Written in C and
+integrating a 2-way MQTT channel through Amazon AWS, DragonConnect
+reads/writes to Ubuntu file handlers allowing control of on-board IO.
 
-More information and source code on [Github](https://github.com/ArrowElectronics/aws-iot-dragonconnect-c)
+The source code for the project is at
+[Github](https://github.com/ArrowElectronics/aws-iot-dragonconnect-c).
 
-* Navigate to DragonConnect
-```sh
-$ cd /home/linaro/Documents/aws-iot-thing-sdk-dragonconnect-c/DragonBoard/
-```
-
-* Build the binary
-```sh
-$ make install
-```
+Documentation for the project is available at
+[DragonConnect Project Pages](https://arrowelectronics.github.io/aws-iot-dragonconnect-c/)
 
 ### DragonPulse
 
-Utilizes NodeJs, MQTT protocol, and Amazon AWS services, to interact with Ubuntu shell commands. Extract performance and summary statistics to remotely monitor top CPU consumption, memory usage, network traffic, and disk space.
+Utilizes NodeJS, MQTT protocol, and Amazon AWS services, to interact with
+Ubuntu shell commands. Extract performance and summary statistics to
+remotely monitor top CPU consumption, memory usage, network traffic,
+and disk space.
 
-More information and source code on [Github](https://github.com/ArrowElectronics/aws-iot-dragonpulse-js)
+The source code for the project is available at
+[Github](https://github.com/ArrowElectronics/aws-iot-dragonpulse-js/)
 
-* Navigate to DragonPulse
-```sh
-$ cd /home/linaro/Documents/aws-iot-thing-sdk-dragonpulse-js/DragonBoard/
-```
+Documentation for the project is available at
+[DragonPulse Project Pages](https://arrowelectronics.github.io/aws-iot-dragonpulse-js/)
 
-* Install and update npm libraries
-```sh
-# install npm libraries in package.json
-$ npm install
-# update libraries that might have changed
-$ npm update
-```
-
-### Install the Private key and Certificate
-
-In order to enable secure communication with AWS IoT service, you will need to put the private key and certificate on the device
-
-* Copy the private key and certificate to the DragonBoard&trade; - there are multiple ways to accomplish this
-  * Use a microSD
-  * E-mail to yourself
-  * Create the certificate using the web browser included
-
-* Put the private key and certificate into the appropriate demo folders
-  * DragonConnect `/home/linaro/Documents/aws-iot-dragonconnect-c/DragonBoard/certs`
-  * DragonPulse `/home/linaro/Documents/aws-iot-dragonpulse-js/DragonBoard/certs`
-  
 # License
-This SDK is distributed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0), see LICENSE.txt and NOTICE.txt for more information.
+This SDK is distributed under the
+[Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0),
+see LICENSE.txt and NOTICE.txt for more information.
