@@ -87,10 +87,10 @@ integrating a 2-way MQTT channel through Amazon AWS, DragonConnect
 reads/writes to Ubuntu file handlers allowing control of on-board IO.
 
 The source code for the project is at
-[Github](https://github.com/ArrowElectronics/aws-iot-dragonconnect-c).
+<a href="https://github.com/ArrowElectronics/aws-iot-dragonconnect-c" target="_blank">GitHub</a>.
 
-Documentation for the project is available at
-[DragonConnect Project Pages](https://arrowelectronics.github.io/aws-iot-dragonconnect-c/)
+Documentation describing how to deploy and configure the DragonConnect project is available at
+<a href="https://arrowelectronics.github.io/aws-iot-dragonconnect-c/" target="_blank">DragonConnect Project Pages</a>
 
 ### DragonPulse
 
@@ -100,10 +100,10 @@ remotely monitor top CPU consumption, memory usage, network traffic,
 and disk space.
 
 The source code for the project is available at
-[Github](https://github.com/ArrowElectronics/aws-iot-dragonpulse-js/)
+<a href="https://github.com/ArrowElectronics/aws-iot-dragonpulse-js/" target="_blank">GitHub</a>
 
-Documentation for the project is available at
-[DragonPulse Project Pages](https://arrowelectronics.github.io/aws-iot-dragonpulse-js/)
+Documentation describing how to deploye and configure the DragonPulse project is available at
+<a href="https://arrowelectronics.github.io/aws-iot-dragonpulse-js/" target="_blank">DragonPulse Project Pages</a>
 
 # License
 This SDK is distributed under the
