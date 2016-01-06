@@ -58,7 +58,7 @@ Please perform the following steps:
 
 ![Image of Network Menu](https://raw.githubusercontent.com/ArrowElectronics/aws-iot-device-sdk/master/images/network_menu.png)
 
-### Install and Update SDKs
+### Install demo-prerequisites
 
 * In the bottom left of the desktop, left-click the start-like icon
 
@@ -68,16 +68,19 @@ Please perform the following steps:
 
 ![Image of Start Icon](https://raw.githubusercontent.com/ArrowElectronics/aws-iot-device-sdk/master/images/terminal.png)
 
-* Update the supporting libraries and SDKs
+* Install and configure the aws-command-line-interface
 ```sh
-cd /home/linaro/Documents/aws-iot-device-sdk/scripts
-# run the update script
-./update.sh
+$ pip install awscli
+```
+Follow the directions [here](http://docs.aws.amazon.com/cli/latest/userguide) to configure the aws-command-line-interface
 
-# install nodejs, additional build libraries through apt-get
-# change to root
-$ sudo su
-$ ./install.sh
+### Download and install the Arrow Electronics AWS-demo
+```sh
+$ cd ~/linaro/Documents
+# clone the AWS-demo repository from the Arrow Electronics GitHub page:
+$ git clone https://github.com/ArrowElectronics/aws-iot-device-sdk.git 
+$ cd aws-iot-device-sdk/scripts
+$ sudo ./install.sh
 ```
 
 ### DragonConnect
