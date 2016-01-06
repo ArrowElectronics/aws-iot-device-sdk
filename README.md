@@ -70,9 +70,22 @@ Please perform the following steps:
 
 * Install and configure the aws-command-line-interface
 ```sh
-$ pip install awscli
+# download the aws-cli bundle
+$ curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+# extract the bundle
+$ unzip awscli-bundle.zip
+# install the bundle
+$ sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
 ```
-Follow the directions [here](http://docs.aws.amazon.com/cli/latest/userguide) to configure the aws-command-line-interface
+* Configure the aws-command-line-interface:
+In order for the aws-cli to connect to your aws-account it needs to be configures with your access Key ID and region:   
+```sh
+$ aws configure
+AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
+AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+Default region name [None]: us-west-2
+Default output format [None]: ENTER
+
 
 ### Download and install the Arrow Electronics AWS-demo
 ```sh
