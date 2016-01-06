@@ -23,7 +23,7 @@ if [ "$iInstall" == "y" ] ; then
     exit $?
    fi
    
-   apt-get install python2.7 nano iftop 
+   apt-get install python2.7 nano iftop lsb-release 
 fi
 
 #ask for path to install to
