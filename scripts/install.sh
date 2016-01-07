@@ -73,7 +73,7 @@ if [ -d "$BASE_DRAGONBOARD_DIR" ]; then
     git pull
     git checkout tags/$DEFAULT_VERSION
   else
-    git clone git://github.com/ArrowElectronics/$DRAGONPULSE_DIR.git
+    git clone https://github.com/ArrowElectronics/$DRAGONPULSE_DIR.git
   fi
 
   # install/update dragonconnect demo
@@ -81,7 +81,7 @@ if [ -d "$BASE_DRAGONBOARD_DIR" ]; then
     git pull
     git checkout tags/$DEFAULT_VERSION
   else
-    git clone git://github.com/ArrowElectronics/$DRAGONCONNECT_DIR.git
+    git clone https://github.com/ArrowElectronics/$DRAGONCONNECT_DIR.git
   fi
 
   # install/update aws iot sdk javascript
@@ -89,7 +89,7 @@ if [ -d "$BASE_DRAGONBOARD_DIR" ]; then
     git pull
     git checkout tags/$DEFAULT_AWS_VERSION
   else
-    git clone git://github.com/aws/$AWS_IOT_JS_DIR.git
+    git clone https://github.com/aws/$AWS_IOT_JS_DIR.git
   fi
 
   # install/update aws iot sdk embedded c
@@ -97,7 +97,7 @@ if [ -d "$BASE_DRAGONBOARD_DIR" ]; then
     git pull
     git checkout tags/$DEFAULT_AWS_VERSION
   else
-    git clone git://github.com/aws/$AWS_IOT_C_DIR.git
+    git clone https://github.com/aws/$AWS_IOT_C_DIR.git
   fi
 else
   echo "Please make sure the directory '$BASE_DRAGONBOARD_DIR' is accesible"
