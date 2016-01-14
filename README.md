@@ -79,7 +79,10 @@ $ sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
 ```
 * Configure the aws-command-line-interface:
 
-In order for the aws-cli to connect to your aws-account it needs to be configures with your access Key ID and region:   
+In order for the aws-cli to connect to your aws-account it needs to be configures with your access Key ID and region: 
+* Log into your AWS account [http://amazon.com/aws](Amazon AWS)
+* Navigate to "My Account">"Security Credentials" to find the Access Key
+
 ```sh
 $ aws configure
 AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
