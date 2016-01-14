@@ -82,12 +82,13 @@ $ sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
 In order for the aws-cli to connect to your aws-account it needs to be configures with your access Key ID and region: 
 * Log into your AWS account [http://amazon.com/aws](Amazon AWS)
 * Navigate to "My Account">"Security Credentials" to find the Access Key
+* NOTE: it seems that AWS has IoT enabled only in the us-east-1 region
 
 ```sh
 $ aws configure
 AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
 AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-Default region name [None]: us-west-2
+Default region name [None]: us-east-1
 Default output format [None]: ENTER
 ```
 
