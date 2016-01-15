@@ -14,18 +14,6 @@ AWS_IOT_C_DIR="aws-iot-device-sdk-embedded-C"
 DEFAULT_VERSION="v1.0.0"
 DEFAULT_AWS_VERSION="v1.0.7"
 
-echo -e "Install system essentials using apt-get? (y=yes, n=no):"
-read iInstall
-
-if [ "$iInstall" == "y" ] ; then
-    if [ $EUID != 0 ]; then
-    sudo "$0" "$@"
-    exit $?
-   fi
-   
-   apt-get install python2.7 nano iftop lsb-release 
-fi
-
 #ask for path to install to
 echo -e "Provide a directory to install in (/home/linaro/Documents is the default):"
 read pPath
