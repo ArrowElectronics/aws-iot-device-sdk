@@ -11,8 +11,9 @@ DRAGONPULSE_DIR="aws-iot-dragonpulse-js"
 DRAGONCONNECT_DIR="aws-iot-dragonconnect-c"
 AWS_IOT_JS_DIR="aws-iot-device-sdk-js"
 AWS_IOT_C_DIR="aws-iot-device-sdk-embedded-C"
-DEFAULT_VERSION="v1.0.0"
-DEFAULT_AWS_VERSION="v1.0.7"
+DEFAULT_VERSION="1.1.0"
+DEFAULT_AWS_VERSION_JS="v1.0.10"
+DEFAULT_AWS_VERSION_C="v1.0.1"
 
 #ask for path to install to
 echo -e "Provide a directory to install in (/home/linaro/Documents is the default):"
@@ -37,15 +38,23 @@ if [ -d "$BASE_DRAGONBOARD_DIR" ]; then
 
   echo "Installing Arrow DragonBoard version $DEFAULT_VERSION"
 
-  #ask for aws version to install
-  echo -e "Amazon AWS Version to install ($DEFAULT_AWS_VERSION is the default):"
+  #ask for aws js version to install
+  echo -e "Amazon AWS JS Version to install ($DEFAULT_AWS_VERSION_JS is the default):"
   read pVersion
 
   if [ "$aVersion" != "" ] ; then
-    DEFAULT_AWS_VERSION=$aVersion
+    DEFAULT_AWS_VERSION_JS=$aVersion
   fi
 
-  echo "Installing Amazon AWS version $DEFAULT_AWS_VERSION"
+  #ask for aws c version to install
+  echo -e "Amazon AWS C Version to install ($DEFAULT_AWS_VERSION_C is the default):"
+  read pVersion
+
+  if [ "$aVersion" != "" ] ; then
+    DEFAULT_AWS_VERSION_C=$aVersion
+  fi
+
+  echo "Installing Amazon AWS version $DEFAULT_AWS_VERSION_JS (js) and $DEFAULT_AWS_VERSION_C (c)"
 
   # update self/install self
   cd $SCRIPTPATH
@@ -75,7 +84,7 @@ if [ -d "$BASE_DRAGONBOARD_DIR" ]; then
   # install/update aws iot sdk javascript
   if [ -d "$AWS_IOT_JS_DIR" ]; then
     git pull
-    git checkout tags/$DEFAULT_AWS_VERSION
+    git checkout tags/$DEFAULT_AWS_VERSION_JS
   else
     git clone https://github.com/aws/$AWS_IOT_JS_DIR.git
   fi
@@ -83,7 +92,7 @@ if [ -d "$BASE_DRAGONBOARD_DIR" ]; then
   # install/update aws iot sdk embedded c
   if [ -d "$AWS_IOT_C_DIR" ]; then
     git pull
-    git checkout tags/$DEFAULT_AWS_VERSION
+    git checkout tags/$DEFAULT_AWS_VERSION_C
   else
     git clone https://github.com/aws/$AWS_IOT_C_DIR.git
   fi
