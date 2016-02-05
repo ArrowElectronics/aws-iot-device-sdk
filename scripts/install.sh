@@ -60,7 +60,7 @@ if [ -d "$BASE_DRAGONBOARD_DIR" ]; then
   cd $SCRIPTPATH
   cd ..
   git pull
-  git checkout tags/$DEFAULT_VERSION
+  git checkout master
 
   # navigate to the base directory
   cd $BASE_DRAGONBOARD_DIR
