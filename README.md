@@ -85,7 +85,8 @@ $ git clone https://github.com/ArrowElectronics/aws-iot-device-sdk.git
 $ cd aws-iot-device-sdk/scripts
 $ ./install.sh
 ```
-* Configure the aws-command-line-interface:
+The installer will ask for a default path. The default is /home/linaro/Documents
+pressing {Enter} will use the defaults
 
 ### DragonConnect
 
