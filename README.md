@@ -88,6 +88,17 @@ $ ./install.sh
 The installer will ask for a default path. The default is /home/linaro/Documents
 pressing {Enter} will use the defaults
 
+Test AWS client by using the following command 
+```sh
+$ aws help
+```
+
+If it returns with 'Could not find executable name "groff"', please install
+```sh
+$ sudo su
+$ apt-get install groff
+```
+
 ### DragonConnect
 
 Connects and communicates with the DragonBoard&trade;. Written in C and
