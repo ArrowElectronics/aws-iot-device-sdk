@@ -88,7 +88,7 @@ if [ -d "$BASE_DRAGONBOARD_DIR" ]; then
 
   cd $BASE_DRAGONBOARD_DIR/$ARROW_DIR/$DRAGONPULSE
   git pull
-  git checkout tags/$DEFAULT_VERSION
+  git checkout tags/$DEFAULT_PULSE_VERSION
 
   #reset the path
   cd $BASE_DRAGONBOARD_DIR
@@ -104,7 +104,7 @@ if [ -d "$BASE_DRAGONBOARD_DIR" ]; then
 
   cd $BASE_DRAGONBOARD_DIR/$ARROW_DIR/$DRAGONCONNECT
   git pull
-  git checkout tags/$DEFAULT_VERSION
+  git checkout tags/$DEFAULT_CONNECT_VERSION
 
   #reset the path
   cd $BASE_DRAGONBOARD_DIR
