@@ -68,17 +68,8 @@ Please perform the following steps:
 
 ![Image of Start Icon](https://raw.githubusercontent.com/ArrowElectronics/aws-iot-device-sdk/master/images/terminal.png)
 
-* Install and configure the aws-command-line-interface
-```sh
-# download the aws-cli bundle
-$ curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
-# extract the bundle
-$ unzip awscli-bundle.zip
-# install the bundle
-$ sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
-```
-* Configure the aws-command-line-interface:
-
+### Obtain Amazon Access Key
+Please have this information ready. 
 In order for the aws-cli to connect to your aws-account it needs to be configures with your access Key ID and region: 
 * Log into your AWS account [http://amazon.com/aws](Amazon AWS)
 * Navigate to "My Account">"Security Credentials" to create the Access Key
@@ -86,22 +77,15 @@ In order for the aws-cli to connect to your aws-account it needs to be configure
 * Click on "Create New Access Key", then use the information provided to fill out the configuration
 * NOTE: it seems that AWS has IoT enabled only in the us-east-1, us-west-2, eu-west-1, and ap-northeast-1 regions
 
-```sh
-$ aws configure
-AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
-AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-Default region name [None]: us-east-1
-Default output format [None]: ENTER
-```
-
 ### Download and install the Arrow Electronics AWS-demo
 ```sh
 $ cd ~/linaro/Documents
-# clone the AWS-demo repository from the Arrow Electronics GitHub page:
+# clone the arrow installer onto the DragonBoard directory (we will use this directory for all other installs)
 $ git clone https://github.com/ArrowElectronics/aws-iot-device-sdk.git 
 $ cd aws-iot-device-sdk/scripts
 $ ./install.sh
 ```
+* Configure the aws-command-line-interface:
 
 ### DragonConnect
 
