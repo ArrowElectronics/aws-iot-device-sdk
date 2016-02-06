@@ -86,7 +86,7 @@ if [ -d "$BASE_DRAGONBOARD_DIR" ]; then
     git clone https://github.com/ArrowElectronics/$DRAGONPULSE.git $DRAGONPULSE
   fi
 
-  cd $ARROW_DIR/$DRAGONPULSE
+  cd $BASE_DRAGONBOARD_DIR/$ARROW_DIR/$DRAGONPULSE
   git pull
   git checkout tags/$DEFAULT_VERSION
 
@@ -102,7 +102,7 @@ if [ -d "$BASE_DRAGONBOARD_DIR" ]; then
     git clone https://github.com/ArrowElectronics/$DRAGONCONNECT.git $DRAGONCONNECT
   fi
 
-  cd $ARROW_DIR/$DRAGONCONNECT
+  cd $BASE_DRAGONBOARD_DIR/$ARROW_DIR/$DRAGONCONNECT
   git pull
   git checkout tags/$DEFAULT_VERSION
 
@@ -118,7 +118,7 @@ if [ -d "$BASE_DRAGONBOARD_DIR" ]; then
     git clone https://github.com/aws/$AWS_IOT_JS.git $AWS_IOT_JS
   fi
 
-  cd $AMAZON_DIR/$AWS_IOT_JS
+  cd $BASE_DRAGONBOARD_DIR/$AMAZON_DIR/$AWS_IOT_JS
   git pull
   git checkout tags/$DEFAULT_AWS_VERSION_JS
 
@@ -134,7 +134,7 @@ if [ -d "$BASE_DRAGONBOARD_DIR" ]; then
     git clone https://github.com/aws/$AWS_IOT_C.git $AWS_IOT_C  
   fi
 
-  cd $AMAZON_DIR/$AWS_IOT_C
+  cd $BASE_DRAGONBOARD_DIR/$AMAZON_DIR/$AWS_IOT_C
   git pull
   git checkout tags/$DEFAULT_AWS_VERSION_C
 
@@ -147,7 +147,7 @@ if [ -d "$BASE_DRAGONBOARD_DIR" ]; then
     mkdir -p $AMAZON_DIR/tmp
   fi
 
-  cd $AMAZON_DIR/tmp
+  cd $BASE_DRAGONBOARD_DIR/$AMAZON_DIR/tmp
   curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
   #install aws command line
   # extract the bundle
