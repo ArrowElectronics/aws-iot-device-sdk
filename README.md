@@ -93,11 +93,9 @@ Connects and communicates with the DragonBoard&trade;. Written in C and
 integrating a 2-way MQTT channel through Amazon AWS, DragonConnect
 reads/writes to Ubuntu file handlers allowing control of on-board IO.
 
-The getting started and source code for the project is at
-<a href="https://github.com/ArrowElectronics/aws-iot-dragonconnect-c" target="_blank">GitHub</a>.
+The <a href="https://github.com/ArrowElectronics/aws-iot-dragonconnect-c" target="_blank">quick getting started guide</a> and source code for the project is available at <a href="https://github.com/ArrowElectronics/aws-iot-dragonconnect-c" target="_blank">GitHub</a>.
 
-Documentation describing how to deploy and configure the DragonConnect project is available at
-<a href="https://arrowelectronics.github.io/aws-iot-dragonconnect-c/" target="_blank">DragonConnect Project Pages</a>
+If you'd like more detailed documentation about the steps involved in configuring and deploying the DragonConnect project, it is also available at the <a href="https://arrowelectronics.github.io/aws-iot-dragonconnect-c/" target="_blank">DragonConnect Project Pages</a> on GitHub.
 
 ### DragonPulse
 
@@ -106,13 +104,11 @@ Ubuntu shell commands. Extract performance and summary statistics to
 remotely monitor top CPU consumption, memory usage, network traffic,
 and disk space.
 
-The getting started and source code for the project is available at
-<a href="https://github.com/ArrowElectronics/aws-iot-dragonpulse-js/" target="_blank">GitHub</a>
+The <a href="https://github.com/ArrowElectronics/aws-iot-dragonpulse-js/" target="_blank">quick getting started guide</a> and source code for the project is available at <a href="https://github.com/ArrowElectronics/aws-iot-dragonpulse-js/" target="_blank">GitHub</a>.
 
-Documentation describing how to deploye and configure the DragonPulse project is available at
-<a href="https://arrowelectronics.github.io/aws-iot-dragonpulse-js/" target="_blank">DragonPulse Project Pages</a>
+If you'd like more detailed documentation about the steps involved in configuring and deploying the DragonPulse project, it is also available at the <a href="https://arrowelectronics.github.io/aws-iot-dragonpulse-js/" target="_blank">DragonPulse Project Pages</a> on GitHub.
 
-## Support
+## Appendix
 
 Test AWS client by using the following command 
 ```sh
