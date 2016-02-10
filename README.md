@@ -80,7 +80,6 @@ In order for the aws-cli to connect to your aws-account it needs to be configure
 ### Download and install the Arrow Electronics AWS-demo
 ```sh
 $ cd ~/linaro/Documents
-# clone the arrow installer onto the DragonBoard directory (we will use this directory for all other installs)
 $ git clone https://github.com/ArrowElectronics/aws-iot-device-sdk.git 
 $ cd aws-iot-device-sdk/scripts
 $ ./install.sh
@@ -88,24 +87,13 @@ $ ./install.sh
 The installer will ask for a default path. The default is /home/linaro/Documents
 pressing {Enter} will use the defaults
 
-Test AWS client by using the following command 
-```sh
-$ aws help
-```
-
-If it returns with 'Could not find executable name "groff"', please install
-```sh
-$ sudo su
-$ apt-get install groff
-```
-
 ### DragonConnect
 
 Connects and communicates with the DragonBoard&trade;. Written in C and
 integrating a 2-way MQTT channel through Amazon AWS, DragonConnect
 reads/writes to Ubuntu file handlers allowing control of on-board IO.
 
-The source code for the project is at
+The getting started and source code for the project is at
 <a href="https://github.com/ArrowElectronics/aws-iot-dragonconnect-c" target="_blank">GitHub</a>.
 
 Documentation describing how to deploy and configure the DragonConnect project is available at
@@ -118,11 +106,24 @@ Ubuntu shell commands. Extract performance and summary statistics to
 remotely monitor top CPU consumption, memory usage, network traffic,
 and disk space.
 
-The source code for the project is available at
+The getting started and source code for the project is available at
 <a href="https://github.com/ArrowElectronics/aws-iot-dragonpulse-js/" target="_blank">GitHub</a>
 
 Documentation describing how to deploye and configure the DragonPulse project is available at
 <a href="https://arrowelectronics.github.io/aws-iot-dragonpulse-js/" target="_blank">DragonPulse Project Pages</a>
+
+## Support
+
+Test AWS client by using the following command 
+```sh
+$ aws help
+```
+
+If it returns with 'Could not find executable name "groff"', please install
+```sh
+$ sudo su
+$ apt-get install groff
+```
 
 # License
 This SDK is distributed under the
