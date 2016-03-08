@@ -10,6 +10,9 @@ sudo apt-get autoremove
 
 cd $BASE_DEVICE_DIR
 
+#see if node exists.
+#TODO (:gtam)
+
 #LTS
 #https://nodejs.org/dist/latest-v4.x/
 #Stable
