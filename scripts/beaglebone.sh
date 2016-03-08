@@ -29,6 +29,8 @@ fi
 cd tmp
 wget https://nodejs.org/dist/latest-v4.x/$NODE_LIB_ARCHIVE_FILE
 
+tar -xf $NODE_LIB_ARCHIVE_FILE
+
 if [ ! -d $BASE_DEVICE_DIR/share ] ; then		
  mkdir -p $BASE_DEVICE_DIR/share		
 fi		
