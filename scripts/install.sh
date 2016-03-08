@@ -26,7 +26,7 @@ fi
 # were we able to detect the device type
 if [ $DEVICE_USER != "" ]; then
 
-    BASE_DEVICE_DIR="/home/$DEVICE_USER/Documents"
+    BASE_DEVICE_DIR="/home/$DEVICE_USER/projects"
     
     AWS_IOT_DEVICE_DIR="aws-iot-device-sdk"
     ARROW_DIR="arrow"
@@ -39,30 +39,35 @@ if [ $DEVICE_USER != "" ]; then
     echo "Using default path '$BASE_DEVICE_DIR'"
     else
     echo "Using custom path $pPath"
-    BASE_DEVICE_DIR=$pPath
+        BASE_DEVICE_DIR=$pPath
     fi
 
+    #make the directory if it doesnt exist
+    if [ ! -d "$BASE_DEVICE_DIR" ]; then
+            mkdir -p $BASE_DEVICE_DIR
+    fi
+
+    #check for existence before continuing
     if [ -d "$BASE_DEVICE_DIR" ]; then
-
-    # update self/install self
-    cd $SCRIPTPATH
-    cd ..
-    git pull
-    git checkout master
-    
-    if [ $DEVICE_TYPE == $BEAGLEBONE ] ; then
-        #run beaglebone related scripts
-        ./beaglebone.sh
+        # update self/install self
+        cd $SCRIPTPATH
+        cd ..
+        git pull
+        git checkout master
         
-    elif [ $DEVICE_TYPE == $DRAGONBOARD ] ; then
-        #run dragonboard related scripts
-        ./dragonboard.sh
-    fi
-    
-    #run amazon
-    ./amazon.sh
-    
-    else
-    echo "Please make sure the directory '$BASE_DEVICE_DIR' is accesible"
+        if [ $DEVICE_TYPE == $BEAGLEBONE ] ; then
+            #run beaglebone related scripts
+            ./beaglebone.sh
+            
+        elif [ $DEVICE_TYPE == $DRAGONBOARD ] ; then
+            #run dragonboard related scripts
+            ./dragonboard.sh
+        fi
+        
+        #run amazon
+        ./amazon.sh
+        
+        else
+        echo "Please make sure the directory '$BASE_DEVICE_DIR' is accesible"
     fi
 fi
