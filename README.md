@@ -30,6 +30,20 @@ $ ./install.sh
 The installer will attempt to detect the device used and then ask for a default path to install software into. The default is /home/linaro/projects for DragonBoard and /home/debian/projects
 pressing {Enter} will use the defaults
 
+## Appendix
+
+Test AWS client by using the following command 
+```sh
+$ aws help
+```
+
+If it returns with 'Could not find executable name "groff"', please install
+```sh
+$ sudo su
+$ apt-get install groff
+```
+
+
 # License
 This SDK is distributed under the
 [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0),

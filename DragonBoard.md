@@ -84,18 +84,6 @@ The <a href="https://github.com/ArrowElectronics/aws-iot-dragonpulse-js/" target
 
 If you'd like more detailed documentation about the steps involved in configuring and deploying the DragonPulse project, it is also available at the <a href="https://arrowelectronics.github.io/aws-iot-dragonpulse-js/" target="_blank">DragonPulse Project Pages</a> on GitHub.
 
-## Appendix
-
-Test AWS client by using the following command 
-```sh
-$ aws help
-```
-
-If it returns with 'Could not find executable name "groff"', please install
-```sh
-$ sudo su
-$ apt-get install groff
-```
 
 # License
 This SDK is distributed under the

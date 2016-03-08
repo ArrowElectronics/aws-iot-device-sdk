@@ -1,19 +1,15 @@
 
 # BeagleBone Black
 
-Arrow's DragonBoard&trade; 410c AWS IoT starter kit has the following contents:
+Beaglebone Black development kit has the following contents:
 * [Beaglebone Black development board](https://www.arrow.com/en/products/bb-bblk-000/circuitco)
-* Power Supply 12V 2A
-* DragonConnect - Demo App written in C
-* DragonPulse - Demo app written in NodeJS
+* TiSense - Demo app written in NodeJS
 
 ![Image of Board](https://raw.githubusercontent.com/ArrowElectronics/aws-iot-device-sdk/master/images/beaglebone.jpg)
 
 BeagleBone Black is a low-cost, community-supported development platform for developers and hobbyists. Boot Linux in under 10 seconds and get started on development in less than 5 minutes with just a single USB cable.
 
-![Image of IoT Stack](https://raw.githubusercontent.com/ArrowElectronics/aws-iot-device-sdk/master/images/iot_infographic.png)
-
-The Starter Kit ecosystem can be setup in a matter of minutes by using a
+The developement kit can be setup in a matter of minutes by using a
 standard monitor and keyboard, connecting to the internet with the
 Beaglebone, and running the demos.
 
@@ -32,21 +28,43 @@ creates an integrated ecosystem for bringing any project online.
 
 ## Re-image to Debian
 
+Determine your board revision
+Rev B = 2Gb
+Rev C+ = 4 Gb
+
+If you are running Rev B, we would suggest running the console OS version.
+
+Find the correct installer:
+http://elinux.org/Beagleboard:BeagleBoneBlack_Debian#Flashing_eMMC
+
+**Definitions**
+*flasher* - just flash to eMMC
+*standalone* - can boot from the SD card
+
+* Download the appropriate image
+* Flash the image onto a SD card
+* Insert the SD card into the Beaglebone, and apply power while holding down the S2 (top right) button, this should be followed by LEDs lighting in a sequential fashion
+
 ## Modify Network Configuration
 
-
-## Appendix
-
-Test AWS client by using the following command 
+* ssh into to the Beaglebone
 ```sh
-$ aws help
+$ ssh root@192.168.7.1
 ```
 
-If it returns with 'Could not find executable name "groff"', please install
+If your network has a default router address of 192.168.7.1, this will cause conflicts with connecting to the BeagleBone. 
+You will need to add a nameserver so that the Beaglebone is able to connect to the internet
 ```sh
-$ sudo su
-$ apt-get install groff
+$ nano /etc/resolv.conf
+//add the google dns nameserver
+nameserver 8.8.8.8
 ```
+
+Once the Beaglebone is able to connect to the internet, you should be able to perform system/application updates.
+
+### Appendix
+
+If all 4 LEDs flash at the same time at a regular interval, this is an indication that the flashing process failed
 
 # License
 This SDK is distributed under the
