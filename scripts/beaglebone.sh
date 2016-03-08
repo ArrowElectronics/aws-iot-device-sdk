@@ -1,12 +1,12 @@
 #!/bin/bash
 
-apt-get update
-apt-get upgrade
+sudo apt-get update
+sudo apt-get upgrade
 
-apt-get install locales resolvconf bluetooth bluez curl unzip
+sudo apt-get install locales resolvconf bluetooth bluez curl unzip python
 
 #clean up
-apt-get autoremove
+sudo apt-get autoremove
 
 cd $BASE_DEVICE_DIR
 
@@ -38,16 +38,16 @@ fi
 mv node-v$NODE_VERSION-linux-$DEVICE_ARCH $BASE_DEVICE_DIR/share
 
 if [ -a /usr/local/bin/node ];then		
-    rm /usr/local/bin/node		
+    sudo rm /usr/local/bin/node		
 fi		
  		
 if [ -a /usr/local/bin/npm ];then		
-    rm /usr/local/bin/npm		
+    sudo rm /usr/local/bin/npm		
 fi		
 		
 #create the symlinks		
-ln -s $BASE_DEVICE_DIR/share/node-v$NODE_VERSION-linux-$DEVICE_ARCH/bin/node /usr/local/bin/node		
-ln -s $$BASE_DEVICE_DIR/share/node-v$NODE_VERSION-linux-$DEVICE_ARCH/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm	
+sudo ln -s $BASE_DEVICE_DIR/share/node-v$NODE_VERSION-linux-$DEVICE_ARCH/bin/node /usr/local/bin/node		
+sudo ln -s $BASE_DEVICE_DIR/share/node-v$NODE_VERSION-linux-$DEVICE_ARCH/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm	
 #fix the permissions		
 chown -R $DEVICE_USER:$DEVICE_USER $BASE_DEVICE_DIR/share		
 chmod 777 /usr/local/bin/node		
