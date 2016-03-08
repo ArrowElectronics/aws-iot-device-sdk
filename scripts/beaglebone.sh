@@ -3,7 +3,7 @@
 sudo apt-get update
 sudo apt-get upgrade
 
-sudo apt-get install locales resolvconf bluetooth bluez curl unzip python
+sudo apt-get install locales resolvconf bluetooth bluez curl unzip python virtualenv
 
 #clean up
 sudo apt-get autoremove
@@ -49,9 +49,9 @@ fi
 sudo ln -s $BASE_DEVICE_DIR/share/node-v$NODE_VERSION-linux-$DEVICE_ARCH/bin/node /usr/local/bin/node		
 sudo ln -s $BASE_DEVICE_DIR/share/node-v$NODE_VERSION-linux-$DEVICE_ARCH/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm	
 #fix the permissions		
-chown -R $DEVICE_USER:$DEVICE_USER $BASE_DEVICE_DIR/share		
-chmod 777 /usr/local/bin/node		
-chmod 777 /usr/local/bin/npm
+sudo chown -R $DEVICE_USER:$DEVICE_USER $BASE_DEVICE_DIR/share		
+sudo chmod 777 /usr/local/bin/node		
+sudo chmod 777 /usr/local/bin/npm
 
 cd $BASE_DEVICE_DIR		
 rm -Rf tmp

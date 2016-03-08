@@ -68,11 +68,10 @@ mkdir -p $AMAZON_DIR/tmp
 fi
 
 cd $BASE_DEVICE_DIR/$AMAZON_DIR/tmp
-curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
-#install aws command line
-# extract the bundle
-unzip awscli-bundle.zip
-# install the bundle
-sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+
+curl -O https://bootstrap.pypa.io/get-pip.py
+sudo python get-pip.py 
+sudo pip install awscli
+
 #configure aws
 aws configure
