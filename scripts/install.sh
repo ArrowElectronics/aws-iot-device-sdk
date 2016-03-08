@@ -59,15 +59,15 @@ if [ $DEVICE_USER != "" ]; then
         
         if [ $DEVICE_TYPE == $BEAGLEBONE ] ; then
             #run beaglebone related scripts
-            ./beaglebone.sh 
+            source beaglebone.sh 
             
         elif [ $DEVICE_TYPE == $DRAGONBOARD ] ; then
             #run dragonboard related scripts
-            ./dragonboard.sh
+            source dragonboard.sh
         fi
         
         #run amazon
-        ./amazon.sh
+        source amazon.sh
         
         else
         echo "Please make sure the directory '$BASE_DEVICE_DIR' is accesible"
