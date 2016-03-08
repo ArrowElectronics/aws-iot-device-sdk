@@ -62,6 +62,11 @@ nameserver 8.8.8.8
 
 Once the Beaglebone is able to connect to the internet, you should be able to perform system/application updates.
 
+## Install Dependencies
+```sh
+$ apt-get install git
+```
+
 ### Appendix
 
 If all 4 LEDs flash at the same time at a regular interval, this is an indication that the flashing process failed
