@@ -5,11 +5,11 @@ AWS IoT services. Currently supports (DragonBoard , Beaglebone)
 
 ## DragonBoard
 
-For DragonBoard related instructions please follow the steps in [DragonBoard.md] before continuing.
+For DragonBoard related instructions please follow the steps in [DragonBoard Instructions](DragonBoard.md) before continuing.
 
 ## Beaglebone
 
-For Beaglebone related instructions please follow the steps in [Beaglebone.md] before continuing.
+For Beaglebone related instructions please follow the steps in [Beaglebone Instructions](Beaglebone.md) before continuing.
 
 ## Obtain Amazon Access Key
 Please have this information ready. 
