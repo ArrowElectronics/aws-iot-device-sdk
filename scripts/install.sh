@@ -2,161 +2,67 @@
 
 SCRIPTPATH=$( cd $(dirname $0) ; pwd -P )
 
-# we assume that nodejs, build-essentials is installed already...
-# in this script we will install and update all the repositories to a certain version
+#detect the device that we are on
+#this is a naive detection scheme
+DEVICE_USER=""
+BEAGLEBONE="beaglebone"
+DRAGONBOARD="linaro-alip"
 
-BASE_DRAGONBOARD_DIR="/home/linaro/Documents"
-AWS_IOT_DEVICE_DIR="aws-iot-device-sdk"
+DEVICE_OS=$(uname -s)
+DEVICE_TYPE=$(uname -n)
+DEVICE_ARCH=$(uname -m)
+DEVICE_VERSION=$(uname -r)
 
-ARROW_DIR="arrow"
-DRAGONPULSE="aws-iot-dragonpulse-js"
-DRAGONCONNECT="aws-iot-dragonconnect-c"
-DEFAULT_PULSE_VERSION="1.1.1"
-DEFAULT_CONNECT_VERSION="1.1.1"
+echo -e "Detected: $DEVICE_TYPE ($DEVICE_ARCH) running $DEVICE_OS $DEVICE_VERSION" 
 
-AMAZON_DIR="amazon"
-AWS_IOT_JS="aws-iot-device-sdk-js"
-AWS_IOT_C="aws-iot-device-sdk-embedded-C"
-DEFAULT_AWS_VERSION_JS="v1.0.10"
-DEFAULT_AWS_VERSION_C="v1.0.1"
-
-#ask for path to install to
-echo -e "Provide a directory to install in (/home/linaro/Documents is the default):"
-read pPath
-
-if [ "$pPath" == "" ] ; then
-  echo "Using default path '/home/linaro/Documents'"
+if [ $DEVICE_TYPE == $BEAGLEBONE ] ; then
+    DEVICE_USER="debian"
+elif [ $DEVICE_TYPE == $DRAGONBOARD ] ; then
+    DEVICE_USER="linaro"
 else
-  echo "Using custom path $pPath"
-  BASE_DRAGONBOARD_DIR=$pPath
+    echo "could not detect device type"
 fi
 
-if [ -d "$BASE_DRAGONBOARD_DIR" ]; then
+# were we able to detect the device type
+if [ $DEVICE_USER != "" ]; then
 
-  #ask for arrow dragonboard version to install
-  echo -e "DragonPulse Version to install ($DEFAULT_PULSE_VERSION is the default):"
-  read pVersion
+    BASE_DEVICE_DIR="/home/$DEVICE_USER/Documents"
+    
+    AWS_IOT_DEVICE_DIR="aws-iot-device-sdk"
+    ARROW_DIR="arrow"
 
-  if [ "$pVersion" != "" ] ; then
-    DEFAULT_PULSE_VERSION=$pVersion
-  fi
+    #ask for path to install to
+    echo -e "Provide a directory to install in ($BASE_DEVICE_DIR is the default):"
+    read pPath
 
-  echo -e "DragonConnect Version to install ($DEFAULT_CONNECT_VERSION is the default):"
-  read pVersion
+    if [ "$pPath" == "" ] ; then
+    echo "Using default path '$BASE_DEVICE_DIR'"
+    else
+    echo "Using custom path $pPath"
+    BASE_DEVICE_DIR=$pPath
+    fi
 
-  if [ "$pVersion" != "" ] ; then
-    DEFAULT_CONNECT_VERSION=$pVersion
-  fi
+    if [ -d "$BASE_DEVICE_DIR" ]; then
 
-  echo "***Installing Arrow DragonBoard Examples version $DEFAULT_PULSE_VERSION (dragonpulse) and $DEFAULT_CONNECT_VERSION (dragonconnect)"
-
-  #ask for aws js version to install
-  echo -e "Amazon AWS JS Version to install ($DEFAULT_AWS_VERSION_JS is the default):"
-  read pVersion
-
-  if [ "$aVersion" != "" ] ; then
-    DEFAULT_AWS_VERSION_JS=$aVersion
-  fi
-
-  #ask for aws c version to install
-  echo -e "Amazon AWS C Version to install ($DEFAULT_AWS_VERSION_C is the default):"
-  read pVersion
-
-  if [ "$aVersion" != "" ] ; then
-    DEFAULT_AWS_VERSION_C=$aVersion
-  fi
-
-  echo "***Installing Amazon AWS libraries version $DEFAULT_AWS_VERSION_JS (js) and $DEFAULT_AWS_VERSION_C (c)"
-
-  # update self/install self
-  cd $SCRIPTPATH
-  cd ..
-  git pull
-  git checkout master
-
-  # navigate to the base directory
-  cd $BASE_DRAGONBOARD_DIR
-  
-  #-------------------
-  # install/update dragonpulse demo
-  #-------------------
-  if [ ! -d "$ARROW_DIR/$DRAGONPULSE" ]; then
-    mkdir -p $ARROW_DIR
-    cd $ARROW_DIR
-    git clone https://github.com/ArrowElectronics/$DRAGONPULSE.git $DRAGONPULSE
-  fi
-
-  cd $BASE_DRAGONBOARD_DIR/$ARROW_DIR/$DRAGONPULSE
-  git pull
-  git checkout tags/$DEFAULT_PULSE_VERSION
-
-  #reset the path
-  cd $BASE_DRAGONBOARD_DIR
-
-  #-------------------
-  # install/update dragonconnect demo
-  #-------------------
-  if [ ! -d "$ARROW_DIR/$DRAGONCONNECT" ]; then
-    mkdir -p $ARROW_DIR
-    cd $ARROW_DIR
-    git clone https://github.com/ArrowElectronics/$DRAGONCONNECT.git $DRAGONCONNECT
-  fi
-
-  cd $BASE_DRAGONBOARD_DIR/$ARROW_DIR/$DRAGONCONNECT
-  git pull
-  git checkout tags/$DEFAULT_CONNECT_VERSION
-
-  #reset the path
-  cd $BASE_DRAGONBOARD_DIR
-
-  #-------------------
-  # install/update aws iot sdk javascript
-  #-------------------
-  if [ ! -d "$AMAZON_DIR/$AWS_IOT_JS" ]; then
-    mkdir -p $AMAZON_DIR
-    cd $AMAZON_DIR
-    git clone https://github.com/aws/$AWS_IOT_JS.git $AWS_IOT_JS
-  fi
-
-  cd $BASE_DRAGONBOARD_DIR/$AMAZON_DIR/$AWS_IOT_JS
-  git pull
-  git checkout tags/$DEFAULT_AWS_VERSION_JS
-
-  #reset the path
-  cd $BASE_DRAGONBOARD_DIR
-
-  #-------------------
-  # install/update aws iot sdk embedded c
-  #-------------------
-  if [ ! -d "$AMAZON_DIR/$AWS_IOT_C" ]; then
-    mkdir -p $AMAZON_DIR
-    cd $AMAZON_DIR
-    git clone https://github.com/aws/$AWS_IOT_C.git $AWS_IOT_C  
-  fi
-
-  cd $BASE_DRAGONBOARD_DIR/$AMAZON_DIR/$AWS_IOT_C
-  git pull
-  git checkout tags/$DEFAULT_AWS_VERSION_C
-
-  #reset the path
-  cd $BASE_DRAGONBOARD_DIR
-
-  echo "Installing Amazon AWS command line client (aws-cli)"
-
-  if [ ! -d "$AMAZON_DIR/tmp" ]; then
-    mkdir -p $AMAZON_DIR/tmp
-  fi
-
-  cd $BASE_DRAGONBOARD_DIR/$AMAZON_DIR/tmp
-  curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
-  #install aws command line
-  # extract the bundle
-  unzip awscli-bundle.zip
-  # install the bundle
-  sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
-  #configure aws
-  aws configure
-
-else
-  echo "Please make sure the directory '$BASE_DRAGONBOARD_DIR' is accesible"
+    # update self/install self
+    cd $SCRIPTPATH
+    cd ..
+    git pull
+    git checkout master
+    
+    if [ $DEVICE_TYPE == $BEAGLEBONE ] ; then
+        #run beaglebone related scripts
+        ./beaglebone.sh
+        
+    elif [ $DEVICE_TYPE == $DRAGONBOARD ] ; then
+        #run dragonboard related scripts
+        ./dragonboard.sh
+    fi
+    
+    #run amazon
+    ./amazon.sh
+    
+    else
+    echo "Please make sure the directory '$BASE_DEVICE_DIR' is accesible"
+    fi
 fi
