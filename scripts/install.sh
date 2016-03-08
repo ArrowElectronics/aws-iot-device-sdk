@@ -66,6 +66,8 @@ if [ $DEVICE_USER != "" ]; then
             source dragonboard.sh
         fi
         
+        cd $SCRIPTPATH
+        
         #run amazon
         source amazon.sh
         
