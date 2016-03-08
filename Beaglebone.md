@@ -71,6 +71,14 @@ $ apt-get install git
 
 If all 4 LEDs flash at the same time at a regular interval, this is an indication that the flashing process failed
 
+You can use resolveconf to make sure that if you had a network conflict, that it will bootup properly next time:
+* Edit tail in /etc/resolvconf/resolv.conf.d
+```sh
+$ nano /etc/resolvconf/resolv.conf.d/tail
+//add the google dns nameserver
+nameserver 8.8.8.8
+```
+
 # License
 This SDK is distributed under the
 [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0),

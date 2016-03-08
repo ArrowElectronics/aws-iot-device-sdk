@@ -1,5 +1,7 @@
 #!/bin/bash
 
+
+
 AMAZON_DIR="amazon"
 AWS_IOT_JS="aws-iot-device-sdk-js"
 AWS_IOT_C="aws-iot-device-sdk-embedded-C"

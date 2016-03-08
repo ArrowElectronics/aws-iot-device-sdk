@@ -3,7 +3,7 @@
 apt-get update
 apt-get upgrade
 
-apt-get install locales git resolvconf bluetooth bluez
+apt-get install locales resolvconf bluetooth bluez curl unzip
 
 #LTS
 #https://nodejs.org/dist/latest-v4.x/
@@ -12,7 +12,7 @@ apt-get install locales git resolvconf bluetooth bluez
 
 #we will install the LTS version to keep it simple
 
-NODE_LIB_ARCHIVE_FILE=`wget -q https://nodejs.org/dist/latest/latest-v4.x/ -O - | grep $DEVICE_ARCH.tar.xz | awk -F\" '{print $2}'`		 +
+NODE_LIB_ARCHIVE_FILE=`wget -q https://nodejs.org/dist/latest/latest-v4.x/ -O - | grep $DEVICE_ARCH.tar.xz | awk -F\" '{print $2}'`
 NODE_VERSION=`echo $NODE_LIB_ARCHIVE_FILE | sed 's/^.*[^0-9]\([0-9]*\.[0-9]*\.[0-9]*\).*$/\1/'`
 
 echo "installing NodeJS $NODE_VERSION..."

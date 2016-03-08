@@ -25,7 +25,7 @@ In order for the aws-cli to connect to your aws-account it needs to be configure
 $ cd ~/projects
 $ git clone https://github.com/ArrowElectronics/aws-iot-device-sdk.git 
 $ cd aws-iot-device-sdk/scripts
-$ ./install.sh
+$ sudo ./install.sh
 ```
 The installer will attempt to detect the device used and then ask for a default path to install software into. The default is /home/linaro/projects for DragonBoard and /home/debian/projects
 pressing {Enter} will use the defaults

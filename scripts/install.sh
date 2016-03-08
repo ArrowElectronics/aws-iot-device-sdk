@@ -55,9 +55,11 @@ if [ $DEVICE_USER != "" ]; then
         git pull
         git checkout master
         
+        cd scripts
+        
         if [ $DEVICE_TYPE == $BEAGLEBONE ] ; then
             #run beaglebone related scripts
-            ./beaglebone.sh
+            ./beaglebone.sh 
             
         elif [ $DEVICE_TYPE == $DRAGONBOARD ] ; then
             #run dragonboard related scripts
