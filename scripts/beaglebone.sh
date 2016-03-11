@@ -8,7 +8,7 @@ echo -e "TiSense Version to install ($DEFAULT_SENSE_VERSION is the default):"
 read pVersion
 
 if [ "$pVersion" != "" ] ; then
-DEFAULT_SENSE_VERSION=$pVersion
+    DEFAULT_SENSE_VERSION=$pVersion
 fi
 
 echo "***Configuring system with additional dependencies..."
@@ -19,11 +19,14 @@ sudo apt-get remove node nodejs npm
 sudo apt-get update
 sudo apt-get upgrade
 
-sudo apt-get install locales resolvconf bluetooth bluez curl unzip python virtualenv default-jre
-
 #remove some stuff to free up room
-sudo apt-get remove oxygen-icon-theme
+sudo apt-get remove oxygen-icon-theme opencv-data chromium-browser oxygen-icon-theme openjdk-7-jre-headless ti-llvm-3.3
  
+#clean up
+sudo apt-get autoremove
+
+sudo apt-get install locales resolvconf bluetooth bluez curl unzip python virtualenv oracle-java8-installer
+
 #clean up
 sudo apt-get autoremove
 

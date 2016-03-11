@@ -26,25 +26,6 @@ creates an integrated ecosystem for bringing any project online.
 * Bluetooth dongle
 * Ethernet internet connection
 
-## Re-image to Debian
-
-Determine your board revision
-Rev B = 2Gb
-Rev C+ = 4 Gb
-
-If you are running Rev B, we would suggest running the console OS version.
-
-Find the correct installer:
-http://elinux.org/Beagleboard:BeagleBoneBlack_Debian#Flashing_eMMC
-
-**Definitions**
-*flasher* - just flash to eMMC
-*standalone* - can boot from the SD card
-
-* Download the appropriate image
-* Flash the image onto a SD card
-* Insert the SD card into the Beaglebone, and apply power while holding down the S2 (top right) button, this should be followed by LEDs lighting in a sequential fashion
-
 ## Modify Network Configuration
 
 * ssh into to the Beaglebone
@@ -67,17 +48,55 @@ Once the Beaglebone is able to connect to the internet, you should be able to pe
 $ apt-get install git
 ```
 
+## Ti SensorTag Example
+The <a href="https://github.com/ArrowElectronics/aws-iot-tisense-js" target="_blank">quick getting started guide</a> and source code for the project is available at <a href="https://github.com/ArrowElectronics/aws-iot-tisense-js" target="_blank">GitHub</a>.
+
+
 ### Appendix
 
 If all 4 LEDs flash at the same time at a regular interval, this is an indication that the flashing process failed
+
+If you lose internet in between any of the scripts, you will have to perform these steps to enable DHCP on your device:
+```sh
+//this assumes you are not root, if you are, then you can remove the sudo
+$ sudo nano /etc/network/interfaces
+
+    auto eth0
+    allow-hotplug eth0
+    iface eth0 inet dhcp
+```
 
 You can use resolveconf to make sure that if you had a network conflict, that it will bootup properly next time:
 * Edit tail in /etc/resolvconf/resolv.conf.d
 ```sh
 $ nano /etc/resolvconf/resolv.conf.d/tail
 //add the google dns nameserver
-nameserver 8.8.8.8
+    nameserver 8.8.8.8
 ```
+* restart the resolv server
+```sh
+$ service resolvconf restart
+```
+
+#### Re-image to Debian
+
+Determine your board revision
+Rev B = 2Gb
+Rev C+ = 4 Gb
+
+If you are running Rev B, we would suggest running the console OS version.
+
+Find the correct installer:
+http://elinux.org/Beagleboard:BeagleBoneBlack_Debian#Flashing_eMMC
+
+**Definitions**
+*flasher* - just flash to eMMC
+*standalone* - can boot from the SD card
+
+* Download the appropriate image
+* Flash the image onto a SD card
+* Insert the SD card into the Beaglebone, and apply power while holding down the S2 (top right) button, this should be followed by LEDs lighting in a sequential fashion
+
 
 # License
 This SDK is distributed under the
