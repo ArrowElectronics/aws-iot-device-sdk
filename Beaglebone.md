@@ -64,6 +64,8 @@ $ sudo nano /etc/network/interfaces
     auto eth0
     allow-hotplug eth0
     iface eth0 inet dhcp
+    
+$ sudo /etc/init.d/networking restart
 ```
 
 You can use resolveconf to make sure that if you had a network conflict, that it will bootup properly next time:
