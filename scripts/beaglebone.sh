@@ -25,22 +25,20 @@ sudo apt-get remove oxygen-icon-theme opencv-data chromium-browser oxygen-icon-t
 #clean up
 sudo apt-get autoremove
 
+#check to see if online, if not online we cant do anything
+if sudo ping -q -c 1 -W 1 google.com >/dev/null; then
+  #online, continue
+else
+    echo -e "No internet connection, please follow the reconnect instructions before continuning..."
+    exit 1
+fi
+
 sudo apt-get install locales resolvconf bluetooth bluez curl unzip python virtualenv oracle-java8-installer
 
 #clean up
 sudo apt-get autoremove
 
 cd $BASE_DEVICE_DIR
-
-
-#check to see if online, if not online we cant do anything
-wget -q --tries=10 --timeout=20 --spider http://google.com
-if [[ $? -eq 0 ]]; then
-    #online, continue
-else
-    echo -e "No internet connection, please follow the reconnect instructions before continuning..."
-    exit 1
-fi
 
 
 #see if node exists.
