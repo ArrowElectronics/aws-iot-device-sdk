@@ -81,13 +81,11 @@ fi
 
 mv node-v$NODE_VERSION-linux-$DEVICE_ARCH $BASE_DEVICE_DIR/share
 
-if [ -f /usr/local/bin/node ]; then		
-    sudo rm -Rf /usr/local/bin/node		
-fi		
- 		
-if [ -f /usr/local/bin/npm ]; then		
-    sudo rm -Rf /usr/local/bin/npm		
-fi		
+#dont even check - just remove
+sudo rm -Rf /usr/local/bin/node			
+sudo rm -Rf /usr/local/bin/npm			
+sudo rm -Rf /usr/local/bin/grunt		
+	
 		
 #create the symlinks		
 sudo ln -s $BASE_DEVICE_DIR/share/node-v$NODE_VERSION-linux-$DEVICE_ARCH/bin/node /usr/local/bin/node		
