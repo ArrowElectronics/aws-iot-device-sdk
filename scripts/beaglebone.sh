@@ -26,7 +26,7 @@ sudo apt-get remove oxygen-icon-theme opencv-data chromium-browser oxygen-icon-t
 sudo apt-get autoremove
 
 #check to see if online, if not online we cant do anything
-if sudo ping -q -c 1 -W 1 google.com >/dev/null; then
+if [ sudo ping -q -c 1 -W 1 google.com >/dev/null ]; then
   #online, continue
 else
     echo -e "No internet connection, please follow the reconnect instructions before continuning..."
