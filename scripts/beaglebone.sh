@@ -100,7 +100,7 @@ rm -Rf tmp
 
 #link it if it doesnt exist - especially if there is no bash profile
 npm install -g grunt-cli
-sudo ln -s $BASE_DEVICE_DIR/projects/share/node-v$NODE_VERSION-linux-$DEVICE_ARCH/lib/node_modules/grunt-cli/bin/grunt /usr/local/bin/grunt
+sudo ln -s $BASE_DEVICE_DIR/share/node-v$NODE_VERSION-linux-$DEVICE_ARCH/lib/node_modules/grunt-cli/bin/grunt /usr/local/bin/grunt
 sudo chmod 777 /usr/local/bin/grunt
 
 echo "***Installing Arrow TiSense Example version $DEFAULT_SENSE_VERSION (tisense)"
