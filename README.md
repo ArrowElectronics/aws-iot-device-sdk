@@ -22,7 +22,7 @@ In order for the aws-cli to connect to your aws-account it needs to be configure
 
 ## Download and install the Arrow Electronics AWS-demo
 ```sh
-$ cd ~/projects
+$ cd ~
 $ git clone https://github.com/ArrowElectronics/aws-iot-device-sdk.git 
 $ cd aws-iot-device-sdk/scripts
 $ ./install.sh
