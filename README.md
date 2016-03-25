@@ -7,9 +7,36 @@ AWS IoT services. Currently supports (DragonBoard , Beaglebone)
 
 For DragonBoard related instructions please follow the steps in [DragonBoard Instructions](DragonBoard.md) before continuing.
 
+### Sample Applications
+
+#### DragonConnect
+
+Connects and communicates with the DragonBoard&trade;. Written in C and
+integrating a 2-way MQTT channel through Amazon AWS, DragonConnect
+reads/writes to Ubuntu file handlers allowing control of on-board IO.
+
+The <a href="https://github.com/ArrowElectronics/aws-iot-dragonconnect-c" target="_blank">quick getting started guide</a> and source code for the project is available at <a href="https://github.com/ArrowElectronics/aws-iot-dragonconnect-c" target="_blank">GitHub</a>.
+
+#### DragonPulse
+
+Utilizes NodeJS, MQTT protocol, and Amazon AWS services, to interact with
+Ubuntu shell commands. Extract performance and summary statistics to
+remotely monitor top CPU consumption, memory usage, network traffic,
+and disk space.
+
+The <a href="https://github.com/ArrowElectronics/aws-iot-dragonpulse-js/" target="_blank">quick getting started guide</a> and source code for the project is available at <a href="https://github.com/ArrowElectronics/aws-iot-dragonpulse-js/" target="_blank">GitHub</a>.
+
 ## Beaglebone
 
 For Beaglebone related instructions please follow the steps in [Beaglebone Instructions](Beaglebone.md) before continuing.
+
+### Sample Applications
+
+#### Ti SensorTag
+
+Utilizes NodeJS, MQTT protocol, and Amazon AWS services, to interact with bluetooth low energy TI sensor tags to capture available sensor data includes, but not limited to IR thermopile temperature, 9-axis motion, digitial humidity, altimeter/pressure, ambient light, buzzer, magnet sensor, and digital microphone.
+
+The <a href="https://github.com/ArrowElectronics/aws-iot-tisense-js" target="_blank">quick getting started guide</a> and source code for the project is available at <a href="https://github.com/ArrowElectronics/aws-iot-tisense-js" target="_blank">GitHub</a>.
 
 ## Obtain Amazon Access Key
 Please have this information ready. 
